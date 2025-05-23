@@ -43,8 +43,7 @@ Note:
 - Minimal Requirement CPU 2 Core, Ram 8 GB to install jenkins + gitlab
 - Jenkins takes 500-600 MB RAM
 - Gitlab takes 2,6 - 2,8 GB RAM
-============================================================
-
+________________
 
 
 Note for gitlab:

@@ -19,7 +19,7 @@ https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/i
 ==============================
 Quickcopy: 
 sudo yum update -y && sudo yum install -y docker && sudo service docker start && sudo usermod -a -G docker ec2-user
-============================================================
+______________________________________________________________
 
 
 Install docker compose on amazon linux 2023
@@ -33,7 +33,8 @@ https://gist.github.com/npearce/6f3c7826c7499587f00957fee62f8ee9
 ==============================
 Quickcopy: 
 sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose && docker-compose version
-============================================================
+______________________________________________________________
+
 
 
 
@@ -43,14 +44,14 @@ Note:
 - Minimal Requirement CPU 2 Core, Ram 8 GB to install jenkins + gitlab
 - Jenkins takes 500-600 MB RAM
 - Gitlab takes 2,6 - 2,8 GB RAM
-________________
+______________________________________________________________
 
 
 Note for gitlab:
 ==============================
 - Username for root account is "root"
 - Path to get root password => /etc/gitlab/initial_root_password
-============================================================
+______________________________________________________________
 
 
 
@@ -65,7 +66,7 @@ Note for jenkins:
   chown -R 1000:1000 /var/jenkins_home/workspace/JOB_NAME/java-app/target
 - Put code webhook at /var/opt/gitlab/git-data/repositories/@hashed/<some-hash>.git and make folder with name 'custom_hooks' 
 REF => https://www.udemy.com/course/jenkins-from-zero-to-hero/learn/lecture/49242187#content
-============================================================
+______________________________________________________________
 
 
 
@@ -79,7 +80,7 @@ Get YOUR_JOB_TOKEN (jenkins jon):
 6. In the Authentication Token field you’ll see either:
 - An existing token (copy this), or
 - An empty box—enter a new secret (e.g. mavensecrettoken) and click Save.
-============================================================
+______________________________________________________________
 
 
 
@@ -88,7 +89,7 @@ Get JENKINS_API_TOKEN (jenkins jon):
 1. Click your username in the top right corner.
 2. Click security at left side
 3. Looking API Token > Current token.
-============================================================
+______________________________________________________________
 
 
 
@@ -96,7 +97,7 @@ Installation for jenkins:
 ==============================
 - Install maven if your app is java => https://www.udemy.com/course/jenkins-from-zero-to-hero/learn/lecture/13087398#overview
 - Install git => https://www.udemy.com/course/jenkins-from-zero-to-hero/learn/lecture/13087400#overview
-============================================================
+______________________________________________________________
 
 
 
@@ -117,7 +118,7 @@ Add new Super User:
 7. copy paste xxx.pub key from jenkins server to ".ssh/authorized_keys" Remote server
 8. chmod 400 .ssh/authorized_keys
 9. sudo chown -R prod-user:prod-user /home/prod-user/.ssh
-============================================================
+______________________________________________________________
 
 
 

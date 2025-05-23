@@ -37,7 +37,6 @@ sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-c
 
 
 
-==============================
 Note:
 ==============================
 - Min 16 Gb disk
@@ -48,7 +47,6 @@ Note:
 
 
 
-==============================
 Note for gitlab:
 ==============================
 - Username for root account is "root"
@@ -57,7 +55,6 @@ Note for gitlab:
 
 
 
-==============================
 Note for jenkins:
 ==============================
 - Run this command "sudo chown -R 1000:1000 ./jenkins" (Outside container jenkins & 1 Same directory folder) [Only for first time instalation, because when first time instalation it become root:root]
@@ -73,7 +70,6 @@ REF => https://www.udemy.com/course/jenkins-from-zero-to-hero/learn/lecture/4924
 
 
 
-==============================
 Get YOUR_JOB_TOKEN (jenkins jon):
 ==============================
 1. Log in to Jenkins as a user with Configure permission on that job.
@@ -88,7 +84,6 @@ Get YOUR_JOB_TOKEN (jenkins jon):
 
 
 
-==============================
 Get JENKINS_API_TOKEN (jenkins jon):
 ==============================
 1. Click your username in the top right corner.
@@ -98,7 +93,6 @@ Get JENKINS_API_TOKEN (jenkins jon):
 
 
 
-==============================
 Installation for jenkins:
 ==============================
 - Install maven if your app is java => https://www.udemy.com/course/jenkins-from-zero-to-hero/learn/lecture/13087398#overview
@@ -113,8 +107,7 @@ docker run -ti -v $PWD/java-app:/app maven:latest sh
 cd app
 mvn package
 
-==============================
-Remote Server (Prod):
+Add new Super User:
 ==============================
 1. sudo useradd prod-user
 2. sudo su

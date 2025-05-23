@@ -5,7 +5,6 @@ Requirement:
 1. Make directory /var/www/html
 2. Put all this repository inside that directory ("/var/www/html")
 
-==============================
 Install docker on amazon linux 2023
 ==============================
 - sudo yum update -y
@@ -23,8 +22,6 @@ sudo yum update -y && sudo yum install -y docker && sudo service docker start &&
 ============================================================
 
 
-
-==============================
 Install docker compose on amazon linux 2023
 ==============================
 - sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose

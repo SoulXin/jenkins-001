@@ -1,0 +1,30 @@
+services:
+  jenkins:
+    container_name: jenkins
+    build:
+      context: ./pipeline
+      dockerfile: dockerfile
+    restart: unless-stopped
+    ports:
+      - "80:8080"
+      - "50000:50000"
+    volumes:
+      - ./jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - jenkins-net
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab
+    hostname: '3.208.20.123'
+    ports:
+      - "8080:80"
+    volumes:
+      - ./srv/gitlab/config:/etc/gitlab
+      - ./srv/gitlab/logs:/var/log/gitlab
+      - ./srv/gitlab/data:/var/opt/gitlab
+    networks:
+      - jenkins-net
+networks:
+  jenkins-net:
+    driver: bridge

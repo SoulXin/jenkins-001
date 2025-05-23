@@ -1,0 +1,28 @@
+#!/bin/bash
+if ! [ -t 0 ]; then
+    read -a ref
+fi
+IFS='/' read -ra REF <<< "${ref[2]}"
+branch="${REF[2]}"   
+
+
+# Only trigger on the main branch
+if [ $branch == "main" ]; then
+  # Trigger the Jenkins job and capture only the HTTP status code
+  http_code=$(curl -u USERNAME:JENKINS_API_TOKEN \
+    -X POST \
+    "http://YOUR_DOMAIN/job/YOUR_JOB/build?token=YOUR_JOB_TOKEN" \
+    --silent --output /dev/null --write-out "%{http_code}")
+
+  # Jenkins typically returns 201 (Created) or 200 (OK)
+  if [[ "$http_code" == "201" || "$http_code" == "200" ]]; then
+    echo "*** OK (HTTP $http_code) — Jenkins job triggered."
+    exit 0
+  else
+    echo "*** ERROR (HTTP $http_code) — Failed to trigger Jenkins job!"
+    exit 2
+  fi
+fi
+
+# If branch is not main, do nothing
+exit 0

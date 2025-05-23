@@ -1,0 +1,6 @@
+services:
+  app:
+    image: "maven-001:$BUILD_TAG"
+    build:
+      context: .
+      dockerfile: dockerfile

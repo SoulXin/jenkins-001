@@ -66,6 +66,8 @@ Note for jenkins:
   chown -R 1000:1000 /var/jenkins_home/workspace/JOB_NAME/java-app/target
 - Put code webhook at /var/opt/gitlab/git-data/repositories/@hashed/<some-hash>.git and make folder with name 'custom_hooks' 
 REF => https://www.udemy.com/course/jenkins-from-zero-to-hero/learn/lecture/49242187#content
+- Remember to set all file bash can be execute (chmod +x ...)
+- For first time install jenkins at docker, your jenkins must connect production server over ssh (container jenkins not the server jenkins 'docker exec -it jenkins bash')
 ______________________________________________________________
 
 
@@ -100,12 +102,6 @@ Installation for jenkins:
 ______________________________________________________________
 
 
-
-
-docker pull maven
-docker run -ti -v $PWD/java-app:/app maven:latest sh
-cd app
-mvn package
 
 Add new Super User:
 ==============================
